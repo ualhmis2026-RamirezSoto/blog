@@ -2,36 +2,42 @@
 layout: default
 title: Contacto
 ---
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<h1>Contacta con el equipo</h1>
-<p>Si tienes alguna duda o sugerencia, no dudes en escribirnos.</p>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h1 class="h3 mb-3 text-center">Contacta con el equipo [cite: 29]</h1>
+                    <p class="text-muted text-center mb-4">Envíanos un mensaje y te responderemos pronto.</p>
 
-<form action="https://formspree.io/f/mdawzovw" method="POST">
-
-    <div>
-        <label for="nombre">Nombre:</label><br>
-        <input type="text" id="nombre" name="nombre" required>
+                    <form action="https://formspree.io/f/mdawzovw" method="POST">
+                        <div class="mb-3">
+                            <label class="form-label">Nombre [cite: 30]</label>
+                            <input type="text" name="nombre" class="form-control" placeholder="Tu nombre completo"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Correo electrónico [cite: 30]</label>
+                            <input type="email" name="correo" class="form-control" placeholder="nombre@ejemplo.com"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Asunto [cite: 30]</label>
+                            <input type="text" name="asunto" class="form-control" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">Mensaje [cite: 30]</label>
+                            <textarea name="mensaje" class="form-control" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-2">Enviar mensaje</button>
+                    </form>
+                    <div class="mt-4 text-center">
+                        <a href="index.html" class="small text-decoration-none">⬅ Volver al inicio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <br>
-
-    <div>
-        <label for="correo">Correo electrónico:</label><br>
-        <input type="email" id="correo" name="correo" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="asunto">Asunto:</label><br>
-        <input type="text" id="asunto" name="asunto" required>
-    </div>
-    <br>
-
-    <div>
-        <label for="mensaje">Mensaje:</label><br>
-        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-    </div>
-    <br>
-
-    <button type="submit">Enviar mensaje</button>
-
-</form>
+</div>
