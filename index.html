@@ -16,7 +16,7 @@ title: Blog del Equipo RamirezSoto
     <ul>
         {% for post in site.posts %}
         <li>
-            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
             <p><em>Publicado el {{ post.date | date: "%d de %B de %Y" }}</em></p>
             <p>{{ post.excerpt }}</p>
         </li>
@@ -27,12 +27,12 @@ title: Blog del Equipo RamirezSoto
 <section>
     <h2>Conoce a los miembros del equipo</h2>
     <ul>
-        <li><a href="/bruno.html">Página personal de Ramírez</a></li>
-        <li><a href="/soto.html">Página personal de Soto</a></li>
+        <li><a href="bruno.html">Página personal de Bruno</a></li>
+        <li><a href="soto.html">Página personal de Soto</a></li>
     </ul>
 </section>
 
 <section>
     <h2>Contacto</h2>
-    <p>¿Quieres decirnos algo? <a href="/contacto.html">Ve a nuestro formulario de contacto</a>.</p>
+    <p>¿Quieres decirnos algo? <a href="contacto.html">Ve a nuestro formulario de contacto</a>.</p>
 </section>
