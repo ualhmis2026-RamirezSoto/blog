@@ -1,0 +1,38 @@
+---
+layout: default
+title: Blog del Equipo RamirezSoto
+---
+
+<h1>Título del blog: Blog del Equipo RamirezSoto</h1>
+
+<section>
+    <h2>Sobre nosotros</h2>
+    <p>Descripción corta del equipo: Somos el equipo RamirezSoto, estudiantes de la UAL, y hemos creado este blog para
+        aprender sobre el desarrollo colaborativo con GitHub Flow y el despliegue de sitios web estáticos.</p>
+</section>
+
+<section>
+    <h2>Últimas entradas del blog</h2>
+    <ul>
+        {% for post in site.posts %}
+        <li>
+            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <p><em>Publicado el {{ post.date | date: "%d de %B de %Y" }}</em></p>
+            <p>{{ post.excerpt }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section>
+    <h2>Conoce a los miembros del equipo</h2>
+    <ul>
+        <li><a href="/ramirez.html">Página personal de Ramírez</a></li>
+        <li><a href="/soto.html">Página personal de Soto</a></li>
+    </ul>
+</section>
+
+<section>
+    <h2>Contacto</h2>
+    <p>¿Quieres decirnos algo? <a href="/contacto.html">Ve a nuestro formulario de contacto</a>.</p>
+</section>
