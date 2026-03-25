@@ -1,16 +1,14 @@
-name: Build and deploy Jekyll site to Azure Web App
+name: Build and deploy Jekyll site to Azure
 
 on:
   push:
     branches:
       - main
-      - camilasoto
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
       - uses: actions/checkout@v4
       
@@ -18,16 +16,12 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-          bundler-cache: true
       
       - name: Install Jekyll
-        run: |
-          gem install bundler jekyll
-          bundle install || true
+        run: gem install bundler jekyll
       
       - name: Build Jekyll site
-        run: |
-          jekyll build --trace
+        run: jekyll build
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -38,17 +32,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: site
       
-      - name: Deploy to Azure Web App
+      - name: Deploy to Azure
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'hmis-ramirezsoto-blog'
-          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7A532641598F45D1A5665C3CB22409AC }}
           package: .
