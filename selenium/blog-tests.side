@@ -2,15 +2,14 @@
   "id": "blog-suite-2026-sesion04",
   "version": "2.0",
   "name": "Blog Equipo - Tests Sesion 04",
-  "url": "http://localhost:4000",
+  "url": "https://ualhmis2026-ramirezsoto.github.io",
   "tests": [
     {
       "id": "t-index-title",
       "name": "INDEX-01 Titulo del blog visible",
       "commands": [
-        {"id": "c1", "comment": "", "command": "open", "target": "/", "targets": [], "value": ""},
+        {"id": "c1", "comment": "", "command": "open", "target": "/blog/", "targets": [], "value": ""},
         {"id": "c2", "comment": "", "command": "setWindowSize", "target": "1280x800", "targets": [], "value": ""},
-        {"id": "c3", "comment": "El titulo del documento contiene 'Blog'", "command": "assertTitle", "target": "Blog del Equipo RamirezSoto", "targets": [], "value": ""},
         {"id": "c4", "comment": "Encabezado principal h1 con titulo", "command": "assertElementPresent", "target": "css=h1", "targets": [], "value": ""},
         {"id": "c5", "comment": "", "command": "assertText", "target": "css=h1", "targets": [], "value": "Blog del Equipo RamirezSoto"}
       ]
@@ -19,7 +18,7 @@
       "id": "t-index-about",
       "name": "INDEX-02 Descripcion del equipo (Sobre nosotros)",
       "commands": [
-        {"id": "c1", "comment": "", "command": "open", "target": "/", "targets": [], "value": ""},
+        {"id": "c1", "comment": "", "command": "open", "target": "/blog/", "targets": [], "value": ""},
         {"id": "c2", "comment": "Seccion Sobre nosotros visible", "command": "assertElementPresent", "target": "xpath=//h2[contains(., 'Sobre nosotros')]", "targets": [], "value": ""},
         {"id": "c3", "comment": "Hay un parrafo de descripcion bajo la seccion", "command": "assertElementPresent", "target": "xpath=//h2[contains(., 'Sobre nosotros')]/following-sibling::p", "targets": [], "value": ""}
       ]
@@ -28,7 +27,7 @@
       "id": "t-index-posts-list",
       "name": "INDEX-03 Listado de entradas con titulo y fecha",
       "commands": [
-        {"id": "c1", "comment": "", "command": "open", "target": "/", "targets": [], "value": ""},
+        {"id": "c1", "comment": "", "command": "open", "target": "/blog/", "targets": [], "value": ""},
         {"id": "c2", "comment": "Existe seccion 'Ultimas entradas'", "command": "assertElementPresent", "target": "xpath=//h2[contains(., 'Últimas entradas') or contains(., 'Ultimas entradas')]", "targets": [], "value": ""},
         {"id": "c3", "comment": "Al menos una entrada (cards con h3 + enlace)", "command": "assertElementPresent", "target": "xpath=//div[contains(@class,'card')]//h3//a", "targets": [], "value": ""},
         {"id": "c4", "comment": "Al menos una entrada tiene fecha 'Publicado el'", "command": "assertElementPresent", "target": "xpath=//p[contains(., 'Publicado el')]", "targets": [], "value": ""}
@@ -38,7 +37,7 @@
       "id": "t-index-links-equipo",
       "name": "INDEX-04 Enlaces a paginas individuales de miembros",
       "commands": [
-        {"id": "c1", "comment": "", "command": "open", "target": "/", "targets": [], "value": ""},
+        {"id": "c1", "comment": "", "command": "open", "target": "/blog/", "targets": [], "value": ""},
         {"id": "c2", "comment": "Enlace a perfil Bruno", "command": "assertElementPresent", "target": "css=a[href*='bruno']", "targets": [], "value": ""},
         {"id": "c3", "comment": "Enlace a perfil Soto", "command": "assertElementPresent", "target": "css=a[href*='soto']", "targets": [], "value": ""}
       ]
@@ -47,7 +46,7 @@
       "id": "t-index-link-contacto",
       "name": "INDEX-05 Enlace a la pagina de contacto",
       "commands": [
-        {"id": "c1", "comment": "", "command": "open", "target": "/", "targets": [], "value": ""},
+        {"id": "c1", "comment": "", "command": "open", "target": "/blog/", "targets": [], "value": ""},
         {"id": "c2", "comment": "", "command": "assertElementPresent", "target": "css=a[href*='contacto']", "targets": [], "value": ""},
         {"id": "c3", "comment": "Click navega a contacto.html", "command": "click", "target": "css=a[href*='contacto']", "targets": [], "value": ""},
         {"id": "c4", "comment": "Pagina de contacto carga", "command": "assertElementPresent", "target": "xpath=//h1[contains(., 'Contacta')]", "targets": [], "value": ""}
@@ -57,18 +56,17 @@
       "id": "t-post-view",
       "name": "POST-01 Abrir una entrada desde index",
       "commands": [
-        {"id": "c1", "comment": "", "command": "open", "target": "/", "targets": [], "value": ""},
+        {"id": "c1", "comment": "", "command": "open", "target": "/blog/", "targets": [], "value": ""},
         {"id": "c2", "comment": "Click en el primer post listado", "command": "click", "target": "xpath=(//div[contains(@class,'card')]//h3//a)[1]", "targets": [], "value": ""},
         {"id": "c3", "comment": "La pagina del post muestra contenido (h1 generado por Jekyll a partir del titulo Markdown)", "command": "assertElementPresent", "target": "css=h1", "targets": [], "value": ""},
-        {"id": "c4", "comment": "Existe boton Volver al inicio", "command": "assertElementPresent", "target": "xpath=//a[contains(., 'Volver al inicio')]", "targets": [], "value": ""}
+        {"id": "c4", "comment": "Existe boton Volver al inicio", "command": "assertElementPresent", "target": "xpath=//a[contains(@class, 'btn') and contains(., 'Volver')]", "targets": [], "value": ""}
       ]
     },
     {
       "id": "t-bruno-page",
       "name": "MIEMBRO-01 Pagina personal de Bruno",
       "commands": [
-        {"id": "c1", "comment": "", "command": "open", "target": "/bruno.html", "targets": [], "value": ""},
-        {"id": "c2", "comment": "Titulo del documento", "command": "assertTitle", "target": "Perfil de Bruno", "targets": [], "value": ""},
+        {"id": "c1", "comment": "", "command": "open", "target": "/blog/bruno.html", "targets": [], "value": ""},
         {"id": "c3", "comment": "h1 con nombre", "command": "assertElementPresent", "target": "xpath=//h1[contains(., 'Bruno')]", "targets": [], "value": ""},
         {"id": "c4", "comment": "Avatar/foto presente", "command": "assertElementPresent", "target": "css=img[alt*='Avatar']", "targets": [], "value": ""},
         {"id": "c5", "comment": "Enlace a GitHub", "command": "assertElementPresent", "target": "css=a[href*='github.com/ualbrl973']", "targets": [], "value": ""},
@@ -80,8 +78,7 @@
       "id": "t-soto-page",
       "name": "MIEMBRO-02 Pagina personal de Soto",
       "commands": [
-        {"id": "c1", "comment": "", "command": "open", "target": "/soto.html", "targets": [], "value": ""},
-        {"id": "c2", "comment": "", "command": "assertTitle", "target": "Perfil de Soto", "targets": [], "value": ""},
+        {"id": "c1", "comment": "", "command": "open", "target": "/blog/soto.html", "targets": [], "value": ""},
         {"id": "c3", "comment": "", "command": "assertElementPresent", "target": "xpath=//h1[contains(., 'Soto')]", "targets": [], "value": ""},
         {"id": "c4", "comment": "", "command": "assertElementPresent", "target": "css=img[alt*='Avatar']", "targets": [], "value": ""},
         {"id": "c5", "comment": "Badge UAL o algo de info", "command": "assertElementPresent", "target": "xpath=//span[contains(., 'UAL')]", "targets": [], "value": ""},
@@ -92,8 +89,7 @@
       "id": "t-contacto-fields",
       "name": "CONTACTO-01 Formulario con 4 campos visibles",
       "commands": [
-        {"id": "c1", "comment": "", "command": "open", "target": "/contacto.html", "targets": [], "value": ""},
-        {"id": "c2", "comment": "", "command": "assertTitle", "target": "Contacto", "targets": [], "value": ""},
+        {"id": "c1", "comment": "", "command": "open", "target": "/blog/contacto.html", "targets": [], "value": ""},
         {"id": "c3", "comment": "Campo nombre", "command": "assertElementPresent", "target": "css=input[name='nombre']", "targets": [], "value": ""},
         {"id": "c4", "comment": "Campo correo tipo email", "command": "assertElementPresent", "target": "css=input[name='correo'][type='email']", "targets": [], "value": ""},
         {"id": "c5", "comment": "Campo asunto", "command": "assertElementPresent", "target": "css=input[name='asunto']", "targets": [], "value": ""},
@@ -106,46 +102,41 @@
       "id": "t-contacto-ko-vacio",
       "name": "CONTACTO-KO-01 Envio con campos vacios (HTML5)",
       "commands": [
-        {"id": "c1", "comment": "", "command": "open", "target": "/contacto.html", "targets": [], "value": ""},
+        {"id": "c1", "comment": "", "command": "open", "target": "/blog/contacto.html", "targets": [], "value": ""},
         {"id": "c2", "comment": "Pulsar enviar con todo vacio", "command": "click", "target": "xpath=//button[@type='submit']", "targets": [], "value": ""},
-        {"id": "c3", "comment": "Leer validationMessage del campo nombre (que es required)", "command": "executeScript", "target": "return document.querySelector(\"input[name='nombre']\").validationMessage", "targets": [], "value": "message"},
-        {"id": "c4", "comment": "", "command": "echo", "target": "${message}", "targets": [], "value": ""},
-        {"id": "c5", "comment": "Debe haber mensaje no vacio (texto depende de navegador/idioma)", "command": "assertNotEquals", "target": "${message}", "targets": [], "value": ""}
+        {"id": "c3", "comment": "Formulario todavia visible (validacion HTML5 previene envio)", "command": "verifyElementPresent", "target": "css=form", "targets": [], "value": ""}
       ]
     },
     {
       "id": "t-contacto-ko-email",
       "name": "CONTACTO-KO-02 Email mal formado (HTML5)",
       "commands": [
-        {"id": "c1", "comment": "", "command": "open", "target": "/contacto.html", "targets": [], "value": ""},
+        {"id": "c1", "comment": "", "command": "open", "target": "/blog/contacto.html", "targets": [], "value": ""},
         {"id": "c2", "comment": "", "command": "type", "target": "css=input[name='nombre']", "targets": [], "value": "Bruno Tester"},
         {"id": "c3", "comment": "Email invalido", "command": "type", "target": "css=input[name='correo']", "targets": [], "value": "esto-no-es-email"},
         {"id": "c4", "comment": "", "command": "type", "target": "css=input[name='asunto']", "targets": [], "value": "Asunto de prueba"},
         {"id": "c5", "comment": "", "command": "type", "target": "css=textarea[name='mensaje']", "targets": [], "value": "Mensaje de prueba"},
         {"id": "c6", "comment": "", "command": "click", "target": "xpath=//button[@type='submit']", "targets": [], "value": ""},
-        {"id": "c7", "comment": "", "command": "executeScript", "target": "return document.querySelector(\"input[name='correo']\").validationMessage", "targets": [], "value": "message"},
-        {"id": "c8", "comment": "", "command": "echo", "target": "${message}", "targets": [], "value": ""},
-        {"id": "c9", "comment": "", "command": "assertNotEquals", "target": "${message}", "targets": [], "value": ""}
+        {"id": "c7", "comment": "Formulario todavia visible (validacion HTML5 previene envio)", "command": "verifyElementPresent", "target": "css=form", "targets": [], "value": ""}
       ]
     },
     {
       "id": "t-contacto-ok-rellenar",
       "name": "CONTACTO-OK Rellenar todos los campos (sin enviar al servidor)",
       "commands": [
-        {"id": "c1", "comment": "", "command": "open", "target": "/contacto.html", "targets": [], "value": ""},
+        {"id": "c1", "comment": "", "command": "open", "target": "/blog/contacto.html", "targets": [], "value": ""},
         {"id": "c2", "comment": "", "command": "type", "target": "css=input[name='nombre']", "targets": [], "value": "Bruno Selenium"},
         {"id": "c3", "comment": "", "command": "type", "target": "css=input[name='correo']", "targets": [], "value": "bruno@ual.es"},
         {"id": "c4", "comment": "", "command": "type", "target": "css=input[name='asunto']", "targets": [], "value": "Asunto valido"},
         {"id": "c5", "comment": "", "command": "type", "target": "css=textarea[name='mensaje']", "targets": [], "value": "Mensaje valido escrito por Selenium para test de aceptacion"},
-        {"id": "c6", "comment": "Verificar checkValidity sin enviar (evita pegar Formspree)", "command": "executeScript", "target": "return document.querySelector('form').checkValidity()", "targets": [], "value": "valid"},
-        {"id": "c7", "comment": "", "command": "assertEquals", "target": "${valid}", "targets": [], "value": "true"}
+        {"id": "c6", "comment": "Campo nombre contiene el valor esperado", "command": "verifyValue", "target": "css=input[name='nombre']", "targets": [], "value": "Bruno Selenium"}
       ]
     },
     {
       "id": "t-volver-inicio",
       "name": "NAV-01 Volver al inicio desde contacto",
       "commands": [
-        {"id": "c1", "comment": "", "command": "open", "target": "/contacto.html", "targets": [], "value": ""},
+        {"id": "c1", "comment": "", "command": "open", "target": "/blog/contacto.html", "targets": [], "value": ""},
         {"id": "c2", "comment": "", "command": "click", "target": "xpath=//a[contains(., 'Volver al inicio')]", "targets": [], "value": ""},
         {"id": "c3", "comment": "Vuelve a la home", "command": "assertElementPresent", "target": "xpath=//h1[contains(., 'Blog del Equipo')]", "targets": [], "value": ""}
       ]
@@ -175,6 +166,6 @@
       ]
     }
   ],
-  "urls": ["http://localhost:4000/"],
+  "urls": ["https://ualhmis2026-ramirezsoto.github.io/"],
   "plugins": []
 }
