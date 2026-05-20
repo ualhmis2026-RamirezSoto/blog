@@ -55,6 +55,13 @@ todos los requisitos del enunciado de la **Sesión 04**:
 | CONTACTO-OK | Rellenar todos los campos | `form.checkValidity() === true` (sin enviar) |
 | NAV-01 | Volver al inicio desde contacto | Link "Volver al inicio" navega a la home |
 
+## Troubleshooting
+
+- **Error `initKeyEvent is not a function` en Firefox**: el comando `type`
+  de Selenium IDE usa una API deprecada que Firefox 134+ eliminó. Por eso
+  los tests usan `sendKeys` en lugar de `type`. Si sigues viéndolo,
+  actualiza Selenium IDE a la última versión o usa Chrome.
+
 ## Notas
 
 - Los tests **no envían** el formulario al servidor de Formspree
