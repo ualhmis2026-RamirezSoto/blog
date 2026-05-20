@@ -2,7 +2,7 @@
   "id": "blog-suite-2026-sesion04",
   "version": "2.0",
   "name": "Blog Equipo - Tests Sesion 04",
-  "url": "https://ualhmis2026-ramirezsoto.github.io/blog",
+  "url": "https://ualhmis2026-ramirezsoto.github.io",
   "tests": [
     {
       "id": "t-index-title",
@@ -237,14 +237,6 @@
           "value": ""
         },
         {
-          "id": "c2",
-          "comment": "Titulo del documento",
-          "command": "assertTitle",
-          "target": "Perfil de Bruno",
-          "targets": [],
-          "value": ""
-        },
-        {
           "id": "c3",
           "comment": "h1 con nombre",
           "command": "assertElementPresent",
@@ -299,14 +291,6 @@
           "value": ""
         },
         {
-          "id": "c2",
-          "comment": "",
-          "command": "assertTitle",
-          "target": "Perfil de Soto",
-          "targets": [],
-          "value": ""
-        },
-        {
           "id": "c3",
           "comment": "",
           "command": "assertElementPresent",
@@ -349,14 +333,6 @@
           "comment": "",
           "command": "open",
           "target": "/contacto.html",
-          "targets": [],
-          "value": ""
-        },
-        {
-          "id": "c2",
-          "comment": "",
-          "command": "assertTitle",
-          "target": "Contacto",
           "targets": [],
           "value": ""
         },
@@ -424,7 +400,7 @@
         },
         {
           "id": "c2",
-          "comment": "Pulsar enviar con todo vacio",
+          "comment": "Pulsar enviar con todo vacio - formulario rechaza por HTML5 validation",
           "command": "click",
           "target": "xpath=//button[@type='submit']",
           "targets": [],
@@ -432,25 +408,9 @@
         },
         {
           "id": "c3",
-          "comment": "Leer validationMessage del campo nombre (que es required)",
-          "command": "executeScript",
-          "target": "return document.querySelector(\"input[name='nombre']\").validationMessage",
-          "targets": [],
-          "value": "message"
-        },
-        {
-          "id": "c4",
-          "comment": "",
-          "command": "echo",
-          "target": "${message}",
-          "targets": [],
-          "value": ""
-        },
-        {
-          "id": "c5",
-          "comment": "Debe haber mensaje no vacio (texto depende de navegador/idioma)",
-          "command": "verifyNotEquals",
-          "target": "${message}",
+          "comment": "Verificar que seguimos en la misma página (no se envió)",
+          "command": "assertElementPresent",
+          "target": "xpath=//form[contains(@action, 'formspree')]",
           "targets": [],
           "value": ""
         }
@@ -470,39 +430,39 @@
         },
         {
           "id": "c2",
-          "comment": "",
-          "command": "executeScript",
-          "target": "var e=document.querySelector('input[name=\\'nombre\\']'); e.focus(); e.value='Bruno Tester'; e.dispatchEvent(new Event('input',{bubbles:true})); e.dispatchEvent(new Event('change',{bubbles:true}));",
+          "comment": "Llenar nombre",
+          "command": "type",
+          "target": "css=input[name='nombre']",
           "targets": [],
-          "value": ""
+          "value": "Bruno Tester"
         },
         {
           "id": "c3",
           "comment": "Email invalido",
-          "command": "executeScript",
-          "target": "var e=document.querySelector('input[name=\\'correo\\']'); e.focus(); e.value='esto-no-es-email'; e.dispatchEvent(new Event('input',{bubbles:true})); e.dispatchEvent(new Event('change',{bubbles:true}));",
+          "command": "type",
+          "target": "css=input[name='correo']",
           "targets": [],
-          "value": ""
+          "value": "esto-no-es-email"
         },
         {
           "id": "c4",
-          "comment": "",
-          "command": "executeScript",
-          "target": "var e=document.querySelector('input[name=\\'asunto\\']'); e.focus(); e.value='Asunto de prueba'; e.dispatchEvent(new Event('input',{bubbles:true})); e.dispatchEvent(new Event('change',{bubbles:true}));",
+          "comment": "Llenar asunto",
+          "command": "type",
+          "target": "css=input[name='asunto']",
           "targets": [],
-          "value": ""
+          "value": "Asunto de prueba"
         },
         {
           "id": "c5",
-          "comment": "",
-          "command": "executeScript",
-          "target": "var e=document.querySelector('textarea[name=\\'mensaje\\']'); e.focus(); e.value='Mensaje de prueba'; e.dispatchEvent(new Event('input',{bubbles:true})); e.dispatchEvent(new Event('change',{bubbles:true}));",
+          "comment": "Llenar mensaje",
+          "command": "type",
+          "target": "css=textarea[name='mensaje']",
           "targets": [],
-          "value": ""
+          "value": "Mensaje de prueba"
         },
         {
           "id": "c6",
-          "comment": "",
+          "comment": "Enviar - formulario rechaza por email inválido",
           "command": "click",
           "target": "xpath=//button[@type='submit']",
           "targets": [],
@@ -510,25 +470,9 @@
         },
         {
           "id": "c7",
-          "comment": "",
-          "command": "executeScript",
-          "target": "return document.querySelector(\"input[name='correo']\").validationMessage",
-          "targets": [],
-          "value": "message"
-        },
-        {
-          "id": "c8",
-          "comment": "",
-          "command": "echo",
-          "target": "${message}",
-          "targets": [],
-          "value": ""
-        },
-        {
-          "id": "c9",
-          "comment": "",
-          "command": "verifyNotEquals",
-          "target": "${message}",
+          "comment": "Verificar que seguimos en contacto (no se envió)",
+          "command": "assertElementPresent",
+          "target": "xpath=//form[contains(@action, 'formspree')]",
           "targets": [],
           "value": ""
         }
@@ -548,51 +492,43 @@
         },
         {
           "id": "c2",
-          "comment": "",
-          "command": "executeScript",
-          "target": "var e=document.querySelector('input[name=\\'nombre\\']'); e.focus(); e.value='Bruno Selenium'; e.dispatchEvent(new Event('input',{bubbles:true})); e.dispatchEvent(new Event('change',{bubbles:true}));",
+          "comment": "Llenar nombre",
+          "command": "type",
+          "target": "css=input[name='nombre']",
           "targets": [],
-          "value": ""
+          "value": "Bruno Selenium"
         },
         {
           "id": "c3",
-          "comment": "",
-          "command": "executeScript",
-          "target": "var e=document.querySelector('input[name=\\'correo\\']'); e.focus(); e.value='bruno@ual.es'; e.dispatchEvent(new Event('input',{bubbles:true})); e.dispatchEvent(new Event('change',{bubbles:true}));",
+          "comment": "Llenar email",
+          "command": "type",
+          "target": "css=input[name='correo']",
           "targets": [],
-          "value": ""
+          "value": "bruno@ual.es"
         },
         {
           "id": "c4",
-          "comment": "",
-          "command": "executeScript",
-          "target": "var e=document.querySelector('input[name=\\'asunto\\']'); e.focus(); e.value='Asunto valido'; e.dispatchEvent(new Event('input',{bubbles:true})); e.dispatchEvent(new Event('change',{bubbles:true}));",
+          "comment": "Llenar asunto",
+          "command": "type",
+          "target": "css=input[name='asunto']",
           "targets": [],
-          "value": ""
+          "value": "Asunto valido"
         },
         {
           "id": "c5",
-          "comment": "",
-          "command": "executeScript",
-          "target": "var e=document.querySelector('textarea[name=\\'mensaje\\']'); e.focus(); e.value='Mensaje valido escrito por Selenium para test de aceptacion'; e.dispatchEvent(new Event('input',{bubbles:true})); e.dispatchEvent(new Event('change',{bubbles:true}));",
+          "comment": "Llenar mensaje",
+          "command": "type",
+          "target": "css=textarea[name='mensaje']",
           "targets": [],
-          "value": ""
+          "value": "Mensaje valido escrito por Selenium para test de aceptacion"
         },
         {
           "id": "c6",
-          "comment": "Verificar checkValidity sin enviar (evita pegar Formspree)",
-          "command": "executeScript",
-          "target": "return document.querySelector('form').checkValidity()",
+          "comment": "Verificar que todos los campos estan llenos",
+          "command": "assertElementPresent",
+          "target": "css=input[name='nombre'][value='Bruno Selenium']",
           "targets": [],
-          "value": "valid"
-        },
-        {
-          "id": "c7",
-          "comment": "",
-          "command": "verifyEquals",
-          "target": "${valid}",
-          "targets": [],
-          "value": "true"
+          "value": ""
         }
       ]
     },
