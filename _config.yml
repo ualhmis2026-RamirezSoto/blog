@@ -1,0 +1,3 @@
+baseurl: /blog
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
