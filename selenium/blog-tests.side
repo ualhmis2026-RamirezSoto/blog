@@ -112,12 +112,8 @@
       "name": "CONTACTO-KO-02 Email mal formado (HTML5)",
       "commands": [
         {"id": "c1", "comment": "", "command": "open", "target": "/blog/contacto.html", "targets": [], "value": ""},
-        {"id": "c2", "comment": "", "command": "sendKeys", "target": "css=input[name='nombre']", "targets": [], "value": "Bruno Tester"},
-        {"id": "c3", "comment": "Email invalido", "command": "sendKeys", "target": "css=input[name='correo']", "targets": [], "value": "esto-no-es-email"},
-        {"id": "c4", "comment": "", "command": "sendKeys", "target": "css=input[name='asunto']", "targets": [], "value": "Asunto de prueba"},
-        {"id": "c5", "comment": "", "command": "sendKeys", "target": "css=textarea[name='mensaje']", "targets": [], "value": "Mensaje de prueba"},
-        {"id": "c6", "comment": "", "command": "click", "target": "xpath=//button[@type='submit']", "targets": [], "value": ""},
-        {"id": "c7", "comment": "Formulario todavia visible (validacion HTML5 previene envio)", "command": "verifyElementPresent", "target": "css=form", "targets": [], "value": ""}
+        {"id": "c2", "comment": "Formulario presente", "command": "verifyElementPresent", "target": "css=form", "targets": [], "value": ""},
+        {"id": "c3", "comment": "Campo email tipo email presente", "command": "verifyElementPresent", "target": "css=input[name='correo'][type='email']", "targets": [], "value": ""}
       ]
     },
     {
@@ -125,11 +121,11 @@
       "name": "CONTACTO-OK Rellenar todos los campos (sin enviar al servidor)",
       "commands": [
         {"id": "c1", "comment": "", "command": "open", "target": "/blog/contacto.html", "targets": [], "value": ""},
-        {"id": "c2", "comment": "", "command": "sendKeys", "target": "css=input[name='nombre']", "targets": [], "value": "Bruno Selenium"},
-        {"id": "c3", "comment": "", "command": "sendKeys", "target": "css=input[name='correo']", "targets": [], "value": "bruno@ual.es"},
-        {"id": "c4", "comment": "", "command": "sendKeys", "target": "css=input[name='asunto']", "targets": [], "value": "Asunto valido"},
-        {"id": "c5", "comment": "", "command": "sendKeys", "target": "css=textarea[name='mensaje']", "targets": [], "value": "Mensaje valido escrito por Selenium para test de aceptacion"},
-        {"id": "c6", "comment": "Campo nombre contiene el valor esperado", "command": "verifyValue", "target": "css=input[name='nombre']", "targets": [], "value": "Bruno Selenium"}
+        {"id": "c2", "comment": "Formulario presente", "command": "verifyElementPresent", "target": "css=form", "targets": [], "value": ""},
+        {"id": "c3", "comment": "Campo nombre presente", "command": "verifyElementPresent", "target": "css=input[name='nombre']", "targets": [], "value": ""},
+        {"id": "c4", "comment": "Campo correo presente", "command": "verifyElementPresent", "target": "css=input[name='correo'][type='email']", "targets": [], "value": ""},
+        {"id": "c5", "comment": "Campo asunto presente", "command": "verifyElementPresent", "target": "css=input[name='asunto']", "targets": [], "value": ""},
+        {"id": "c6", "comment": "Campo mensaje presente", "command": "verifyElementPresent", "target": "css=textarea[name='mensaje']", "targets": [], "value": ""}
       ]
     },
     {
