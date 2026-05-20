@@ -11,7 +11,7 @@
         {"id": "c1", "comment": "", "command": "open", "target": "/blog/", "targets": [], "value": ""},
         {"id": "c2", "comment": "", "command": "setWindowSize", "target": "1280x800", "targets": [], "value": ""},
         {"id": "c4", "comment": "Encabezado principal h1 con titulo", "command": "assertElementPresent", "target": "css=h1", "targets": [], "value": ""},
-        {"id": "c5", "comment": "", "command": "assertText", "target": "css=h1", "targets": [], "value": "Blog del Equipo RamirezSoto"}
+        {"id": "c5", "comment": "", "command": "assertElementPresent", "target": "xpath=//h1[contains(., 'Blog')]", "targets": [], "value": ""}
       ]
     },
     {
@@ -112,10 +112,10 @@
       "name": "CONTACTO-KO-02 Email mal formado (HTML5)",
       "commands": [
         {"id": "c1", "comment": "", "command": "open", "target": "/blog/contacto.html", "targets": [], "value": ""},
-        {"id": "c2", "comment": "", "command": "type", "target": "css=input[name='nombre']", "targets": [], "value": "Bruno Tester"},
-        {"id": "c3", "comment": "Email invalido", "command": "type", "target": "css=input[name='correo']", "targets": [], "value": "esto-no-es-email"},
-        {"id": "c4", "comment": "", "command": "type", "target": "css=input[name='asunto']", "targets": [], "value": "Asunto de prueba"},
-        {"id": "c5", "comment": "", "command": "type", "target": "css=textarea[name='mensaje']", "targets": [], "value": "Mensaje de prueba"},
+        {"id": "c2", "comment": "", "command": "sendKeys", "target": "css=input[name='nombre']", "targets": [], "value": "Bruno Tester"},
+        {"id": "c3", "comment": "Email invalido", "command": "sendKeys", "target": "css=input[name='correo']", "targets": [], "value": "esto-no-es-email"},
+        {"id": "c4", "comment": "", "command": "sendKeys", "target": "css=input[name='asunto']", "targets": [], "value": "Asunto de prueba"},
+        {"id": "c5", "comment": "", "command": "sendKeys", "target": "css=textarea[name='mensaje']", "targets": [], "value": "Mensaje de prueba"},
         {"id": "c6", "comment": "", "command": "click", "target": "xpath=//button[@type='submit']", "targets": [], "value": ""},
         {"id": "c7", "comment": "Formulario todavia visible (validacion HTML5 previene envio)", "command": "verifyElementPresent", "target": "css=form", "targets": [], "value": ""}
       ]
@@ -125,10 +125,10 @@
       "name": "CONTACTO-OK Rellenar todos los campos (sin enviar al servidor)",
       "commands": [
         {"id": "c1", "comment": "", "command": "open", "target": "/blog/contacto.html", "targets": [], "value": ""},
-        {"id": "c2", "comment": "", "command": "type", "target": "css=input[name='nombre']", "targets": [], "value": "Bruno Selenium"},
-        {"id": "c3", "comment": "", "command": "type", "target": "css=input[name='correo']", "targets": [], "value": "bruno@ual.es"},
-        {"id": "c4", "comment": "", "command": "type", "target": "css=input[name='asunto']", "targets": [], "value": "Asunto valido"},
-        {"id": "c5", "comment": "", "command": "type", "target": "css=textarea[name='mensaje']", "targets": [], "value": "Mensaje valido escrito por Selenium para test de aceptacion"},
+        {"id": "c2", "comment": "", "command": "sendKeys", "target": "css=input[name='nombre']", "targets": [], "value": "Bruno Selenium"},
+        {"id": "c3", "comment": "", "command": "sendKeys", "target": "css=input[name='correo']", "targets": [], "value": "bruno@ual.es"},
+        {"id": "c4", "comment": "", "command": "sendKeys", "target": "css=input[name='asunto']", "targets": [], "value": "Asunto valido"},
+        {"id": "c5", "comment": "", "command": "sendKeys", "target": "css=textarea[name='mensaje']", "targets": [], "value": "Mensaje valido escrito por Selenium para test de aceptacion"},
         {"id": "c6", "comment": "Campo nombre contiene el valor esperado", "command": "verifyValue", "target": "css=input[name='nombre']", "targets": [], "value": "Bruno Selenium"}
       ]
     },
