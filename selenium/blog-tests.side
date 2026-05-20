@@ -12,7 +12,7 @@
           "id": "c1",
           "comment": "",
           "command": "open",
-          "target": "/",
+          "target": "/blog/",
           "targets": [],
           "value": ""
         },
@@ -58,7 +58,7 @@
           "id": "c1",
           "comment": "",
           "command": "open",
-          "target": "/",
+          "target": "/blog/",
           "targets": [],
           "value": ""
         },
@@ -88,7 +88,7 @@
           "id": "c1",
           "comment": "",
           "command": "open",
-          "target": "/",
+          "target": "/blog/",
           "targets": [],
           "value": ""
         },
@@ -126,7 +126,7 @@
           "id": "c1",
           "comment": "",
           "command": "open",
-          "target": "/",
+          "target": "/blog/",
           "targets": [],
           "value": ""
         },
@@ -156,7 +156,7 @@
           "id": "c1",
           "comment": "",
           "command": "open",
-          "target": "/",
+          "target": "/blog/",
           "targets": [],
           "value": ""
         },
@@ -194,7 +194,7 @@
           "id": "c1",
           "comment": "",
           "command": "open",
-          "target": "/",
+          "target": "/blog/",
           "targets": [],
           "value": ""
         },
@@ -232,7 +232,7 @@
           "id": "c1",
           "comment": "",
           "command": "open",
-          "target": "/bruno.html",
+          "target": "/blog/bruno.html",
           "targets": [],
           "value": ""
         },
@@ -286,7 +286,7 @@
           "id": "c1",
           "comment": "",
           "command": "open",
-          "target": "/soto.html",
+          "target": "/blog/soto.html",
           "targets": [],
           "value": ""
         },
@@ -332,7 +332,7 @@
           "id": "c1",
           "comment": "",
           "command": "open",
-          "target": "/contacto.html",
+          "target": "/blog/contacto.html",
           "targets": [],
           "value": ""
         },
@@ -394,7 +394,7 @@
           "id": "c1",
           "comment": "",
           "command": "open",
-          "target": "/contacto.html",
+          "target": "/blog/contacto.html",
           "targets": [],
           "value": ""
         },
@@ -424,7 +424,7 @@
           "id": "c1",
           "comment": "",
           "command": "open",
-          "target": "/contacto.html",
+          "target": "/blog/contacto.html",
           "targets": [],
           "value": ""
         },
@@ -486,7 +486,7 @@
           "id": "c1",
           "comment": "",
           "command": "open",
-          "target": "/contacto.html",
+          "target": "/blog/contacto.html",
           "targets": [],
           "value": ""
         },
@@ -540,7 +540,7 @@
           "id": "c1",
           "comment": "",
           "command": "open",
-          "target": "/contacto.html",
+          "target": "/blog/contacto.html",
           "targets": [],
           "value": ""
         },
