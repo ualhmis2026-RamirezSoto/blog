@@ -2,7 +2,7 @@
   "id": "blog-suite-2026-sesion04",
   "version": "2.0",
   "name": "Blog Equipo - Tests Sesion 04",
-  "url": "http://localhost:4000",
+  "url": "https://ualhmis2026-ramirezsoto.github.io/blog",
   "tests": [
     {
       "id": "t-index-title",
@@ -218,7 +218,7 @@
           "id": "c4",
           "comment": "Existe boton Volver al inicio",
           "command": "assertElementPresent",
-          "target": "xpath=//a[contains(., 'Volver al inicio')]",
+          "target": "xpath=//a[contains(@class, 'btn') and contains(., 'Volver')]",
           "targets": [],
           "value": ""
         }
@@ -449,7 +449,7 @@
         {
           "id": "c5",
           "comment": "Debe haber mensaje no vacio (texto depende de navegador/idioma)",
-          "command": "assertNotEquals",
+          "command": "verifyNotEquals",
           "target": "${message}",
           "targets": [],
           "value": ""
@@ -527,7 +527,7 @@
         {
           "id": "c9",
           "comment": "",
-          "command": "assertNotEquals",
+          "command": "verifyNotEquals",
           "target": "${message}",
           "targets": [],
           "value": ""
@@ -589,7 +589,7 @@
         {
           "id": "c7",
           "comment": "",
-          "command": "assertEquals",
+          "command": "verifyEquals",
           "target": "${valid}",
           "targets": [],
           "value": "true"

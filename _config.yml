@@ -1,0 +1,5 @@
+baseurl: /blog
+title: Blog del Equipo RamirezSoto
+description: Blog colaborativo del equipo RamirezSoto
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
